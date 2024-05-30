@@ -5,6 +5,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
 import NavBar from "./NavBar";
+import SideBar from "./SideBar";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -32,10 +33,20 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <NavBar />
-          <main>{children}</main>
+          <div className="grid grid-cols-[220px_auto] grid-rows-[auto_1fr]  h-svh border-spacing-[6px_white]">
+            <NavBar />
+            <main className=" bg-opacity-40  ">{children}</main>
+            <SideBar />
+          </div>
         </ThemeProvider>
       </body>
     </html>
   );
 }
+// const StyleAppLayout = styled.div`
+//   display: grid;
+//   grid-template-columns: 26rem 1fr;
+//   grid-template-rows: auto 1fr;
+//   height: 100vh;
+//   position: relative;
+// `;
