@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
 import "./globals.css";
+import { Toaster } from "react-hot-toast";
 
 import { cn } from "@/lib/utils";
 import { ThemeProvider } from "@/components/theme-provider";
@@ -33,9 +34,10 @@ export default function RootLayout({
           enableSystem
           disableTransitionOnChange
         >
-          <div className="grid grid-cols-[220px_auto] grid-rows-[auto_1fr]  h-svh border-spacing-[6px_white]">
+          <div className="grid h-svh grid-cols-[220px_auto] grid-rows-[auto_1fr]   border-spacing-[6px_white]">
             <NavBar />
-            <main className=" bg-opacity-40  ">{children}</main>
+            <Toaster position="top-center" />
+            <main className=" bg-opacity-40 ">{children}</main>
             <SideBar />
           </div>
         </ThemeProvider>
